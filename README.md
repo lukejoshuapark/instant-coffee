@@ -8,6 +8,12 @@ tools and utilities that are useful for development.
 
 Both `amd64` and `arm64` images are supported.
 
+## Image URL
+
+```url
+ghcr.io/lukejoshuapark/instant-coffee:0.1.1
+```
+
 ## Installed Software
 
 |Name|Type|Version|
@@ -37,13 +43,14 @@ Instant Coffee.
 
 ```json
 {
-    "image": "ghcr.io/lukejoshuapark/instant-coffee:latest",
+    "image": "ghcr.io/lukejoshuapark/instant-coffee:0.1.1",
     "mounts": [
         "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
     ],
     "customizations": {
         "vscode": {
             "extensions": [
+                "dbaeumer.vscode-eslint",
                 "eamodio.gitlens",
                 "golang.go",
                 "hashicorp.terraform",

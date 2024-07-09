@@ -61,4 +61,5 @@ RUN rm /git-setup.sh
 # Squash everything together.
 FROM scratch
 COPY --from=build / /
-ENV PATH="/usr/bin/go/bin:$PATH"
+ENV PATH="/usr/bin/go/bin:/usr/bin/node/bin:$PATH"
+ENV CARGO_TARGET_DIR="/target"
