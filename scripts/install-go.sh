@@ -1,6 +1,5 @@
 # Install Go.
 curl -L -O https://go.dev/dl/go${GOLANG_VERSION}.linux-${TARGETARCH}.tar.gz || exit 1
-ls -la . || exit 1
 tar -xzf go${GOLANG_VERSION}.linux-${TARGETARCH}.tar.gz || exit 1
 mv go /usr/bin || exit 1
 rm go${GOLANG_VERSION}.linux-${TARGETARCH}.tar.gz || exit 1
