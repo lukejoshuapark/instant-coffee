@@ -7,6 +7,7 @@ ARG TARGETARCH
 ARG DOCKER_VERSION=27.0.3
 ARG DOCKER_COMPOSE_VERSION=2.28.1
 ARG GOLANG_VERSION=1.22.5
+ARG GOMPLATE_VERSION=4.1.0
 ARG LAZYGIT_VERSION=0.42.0
 ARG MIGRATE_VERSION=4.17.1
 ARG NODE_VERSION=20.15.0
@@ -17,9 +18,11 @@ ARG TERRAFORM_VERSION=1.9.1
 ARG PACKAGES="git unzip zip gcc xz-utils jq curl"
 
 # Install packages.
-RUN apt update
-RUN apt upgrade -y
-RUN apt install -y ${PACKAGES}
+RUN apt-get update
+RUN apt-get upgrade -y
+RUN apt-get install -y ${PACKAGES}
+RUN apt-get clean
+RUN rm -rf /var/lib/apt/lists/*
 
 # Install Docker and Docker Compose Plugin.
 COPY ./scripts/install-docker.sh ./
@@ -28,6 +31,10 @@ RUN chmod u+x ./install-docker.sh && ./install-docker.sh && rm ./install-docker.
 # Install Go.
 COPY ./scripts/install-go.sh ./
 RUN chmod u+x ./install-go.sh && ./install-go.sh && rm ./install-go.sh
+
+# Install gomplate.
+COPY ./scripts/install-gomplate.sh ./
+RUN chmod u+x ./install-gomplate.sh && ./install-gomplate.sh && rm ./install-gomplate.sh
 
 # Install lazygit.
 COPY ./scripts/install-lazygit.sh ./
