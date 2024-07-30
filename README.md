@@ -44,7 +44,7 @@ Instant Coffee.
 
 ```json
 {
-    "image": "ghcr.io/lukejoshuapark/instant-coffee:0.1.1",
+    "image": "ghcr.io/lukejoshuapark/instant-coffee:0.2.0",
     "mounts": [
         "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
     ],
