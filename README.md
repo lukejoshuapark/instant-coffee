@@ -56,7 +56,8 @@ Instant Coffee.
                 "golang.go",
                 "hashicorp.terraform",
                 "rust-lang.rust-analyzer",
-                "tamasfe.even-better-toml"
+                "tamasfe.even-better-toml",
+                "vadimcn.vscode-lldb"
             ],
             "settings": {
                 "javascript.preferences.quoteStyle": "double",
@@ -72,7 +73,8 @@ Instant Coffee.
                     "editor.tabSize": 2
                 },
                 "files.insertFinalNewline": true,
-                "rust-analyzer.check.overrideCommand": ["cargo", "clippy", "--workspace", "--message-format=json", "--all-targets"]
+                "rust-analyzer.check.overrideCommand": ["cargo", "clippy", "--workspace", "--message-format=json", "--all-targets"],
+                "rust-analyzer.testExplorer": true
             }
         }
     }
