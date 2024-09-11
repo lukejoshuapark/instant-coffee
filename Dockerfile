@@ -4,14 +4,15 @@ ARG UBUNTU_VERSION=24.04
 FROM ubuntu:${UBUNTU_VERSION} AS build
 ARG TARGETARCH
 
+ARG AWSCLI_VERSION=2.17.48
 ARG DOCKER_VERSION=27.0.3
 ARG DOCKER_COMPOSE_VERSION=2.28.1
-ARG GOLANG_VERSION=1.22.5
+ARG GOLANG_VERSION=1.23.1
 ARG GOMPLATE_VERSION=4.1.0
 ARG LAZYGIT_VERSION=0.42.0
 ARG MIGRATE_VERSION=4.17.1
 ARG NODE_VERSION=20.15.0
-ARG RUST_VERSION=1.79.0
+ARG RUST_VERSION=1.81.0
 ARG TASK_VERSION=3.38.0
 ARG TERRAFORM_VERSION=1.9.1
 
@@ -23,6 +24,10 @@ RUN apt-get upgrade -y
 RUN apt-get install -y ${PACKAGES}
 RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/*
+
+# Install AWS CLI.
+COPY ./scripts/install-aws-cli.sh ./
+RUN chmod u+x ./install-aws-cli.sh && ./install-aws-cli.sh && rm ./install-aws-cli.sh
 
 # Install Docker and Docker Compose Plugin.
 COPY ./scripts/install-docker.sh ./
