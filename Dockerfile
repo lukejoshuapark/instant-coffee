@@ -5,6 +5,7 @@ FROM ubuntu:${UBUNTU_VERSION} AS build
 ARG TARGETARCH
 
 ARG AWSCLI_VERSION=2.17.48
+ARG CARGO_LAMBDA_VERSION=1.4.0
 ARG DOCKER_VERSION=27.0.3
 ARG DOCKER_COMPOSE_VERSION=2.28.1
 ARG GOLANG_VERSION=1.23.1
@@ -56,6 +57,10 @@ RUN chmod u+x ./install-node.sh && ./install-node.sh && rm ./install-node.sh
 # Install Rust.
 COPY ./scripts/install-rust.sh ./
 RUN chmod u+x ./install-rust.sh && ./install-rust.sh && rm ./install-rust.sh
+
+# Install cargo-lambda.
+COPY ./scripts/install-cargo-lambda.sh ./
+RUN chmod u+x ./install-cargo-lambda.sh && ./install-cargo-lambda.sh && rm ./install-cargo-lambda.sh
 
 # Install task.
 COPY ./scripts/install-task.sh ./
