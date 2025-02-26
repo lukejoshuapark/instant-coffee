@@ -30,6 +30,10 @@ RUN rm -rf /var/lib/apt/lists/*
 COPY ./scripts/install-aws-cli.sh ./
 RUN chmod u+x ./install-aws-cli.sh && ./install-aws-cli.sh && rm ./install-aws-cli.sh
 
+# Install cargo-lambda.
+COPY ./scripts/install-cargo-lambda.sh ./
+RUN chmod u+x ./install-cargo-lambda.sh && ./install-cargo-lambda.sh && rm ./install-cargo-lambda.sh
+
 # Install Docker and Docker Compose Plugin.
 COPY ./scripts/install-docker.sh ./
 RUN chmod u+x ./install-docker.sh && ./install-docker.sh && rm ./install-docker.sh
@@ -50,6 +54,10 @@ RUN chmod u+x ./install-lazygit.sh && ./install-lazygit.sh && rm ./install-lazyg
 COPY ./scripts/install-migrate.sh ./
 RUN chmod u+x ./install-migrate.sh && ./install-migrate.sh && rm ./install-migrate.sh
 
+# Install ngrok.
+COPY ./scripts/install-ngrok.sh ./
+RUN chmod u+x ./install-ngrok.sh && ./install-ngrok.sh && rm ./install-ngrok.sh
+
 # Install Node.
 COPY ./scripts/install-node.sh ./
 RUN chmod u+x ./install-node.sh && ./install-node.sh && rm ./install-node.sh
@@ -57,10 +65,6 @@ RUN chmod u+x ./install-node.sh && ./install-node.sh && rm ./install-node.sh
 # Install Rust.
 COPY ./scripts/install-rust.sh ./
 RUN chmod u+x ./install-rust.sh && ./install-rust.sh && rm ./install-rust.sh
-
-# Install cargo-lambda.
-COPY ./scripts/install-cargo-lambda.sh ./
-RUN chmod u+x ./install-cargo-lambda.sh && ./install-cargo-lambda.sh && rm ./install-cargo-lambda.sh
 
 # Install task.
 COPY ./scripts/install-task.sh ./

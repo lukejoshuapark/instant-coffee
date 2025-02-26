@@ -11,7 +11,7 @@ Both `amd64` and `arm64` images are supported.
 ## Image URL
 
 ```url
-ghcr.io/lukejoshuapark/instant-coffee:0.5.1
+ghcr.io/lukejoshuapark/instant-coffee:0.6.0
 ```
 
 ## Installed Software
@@ -31,6 +31,7 @@ ghcr.io/lukejoshuapark/instant-coffee:0.5.1
 |jq|💛 Utility||
 |lazygit|💛 Utility|0.46.0|
 |migrate|💛 Utility|4.18.2|
+|ngrok|💛 Utility||
 |Node|💙 Language/Runtime|22.14.0|
 |Rust|💙 Language/Runtime|1.84.1|
 |task|💛 Utility|3.41.0|
@@ -46,7 +47,7 @@ Instant Coffee.
 
 ```json
 {
-    "image": "ghcr.io/lukejoshuapark/instant-coffee:0.5.1",
+    "image": "ghcr.io/lukejoshuapark/instant-coffee:0.6.0",
     "mounts": [
         "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
     ],
