@@ -65,6 +65,10 @@ RUN chmod u+x ./install-node.sh && ./install-node.sh && rm ./install-node.sh
 COPY ./scripts/install-rust.sh ./
 RUN chmod u+x ./install-rust.sh && ./install-rust.sh && rm ./install-rust.sh
 
+# Install sqlx-cli.
+COPY ./scripts/install-sqlx-cli.sh ./
+RUN chmod u+x ./install-sqlx-cli.sh && ./install-sqlx-cli.sh && rm ./install-sqlx-cli.sh
+
 # Install task.
 COPY ./scripts/install-task.sh ./
 RUN chmod u+x ./install-task.sh && ./install-task.sh && rm ./install-task.sh
