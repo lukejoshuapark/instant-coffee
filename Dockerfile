@@ -16,7 +16,7 @@ ARG RUST_VERSION=1.86.0
 ARG TASK_VERSION=3.42.1
 ARG TERRAFORM_VERSION=1.11.4
 
-ARG PACKAGES="git unzip zip gcc xz-utils jq curl"
+ARG PACKAGES="git unzip zip gcc xz-utils jq curl python3 python3-pip python3-venv build-essential"
 
 # Install packages.
 RUN apt-get update
