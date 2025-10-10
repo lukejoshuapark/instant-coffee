@@ -2,9 +2,12 @@
 
 curl -L -O https://go.dev/dl/go${GOLANG_VERSION}.linux-${TARGETARCH}.tar.gz || exit 1
 tar -xzf go${GOLANG_VERSION}.linux-${TARGETARCH}.tar.gz || exit 1
-mv go /usr/bin || exit 1
+mv go /usr/local || exit 1
 rm go${GOLANG_VERSION}.linux-${TARGETARCH}.tar.gz || exit 1
-PATH="/usr/bin/go/bin:$PATH"
+
+PATH="/usr/local/go/bin:$PATH"
+GOROOT="/usr/local/go"
+GOPATH="/root/go"
 
 go install github.com/uudashr/gopkgs/v2/cmd/gopkgs@latest
 go install github.com/ramya-rao-a/go-outline@latest
