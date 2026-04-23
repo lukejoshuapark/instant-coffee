@@ -89,6 +89,6 @@ RUN rm /git-setup.sh
 FROM scratch
 COPY --from=build / /
 ENV HOME="/root"
-ENV PATH="/root/.cargo/bin:/root/go/bin:/usr/local/go/bin:/usr/local/node/bin:$PATH"
+ENV PATH="/root/.local/bin:/root/.cargo/bin:/root/go/bin:/usr/local/go/bin:/usr/local/node/bin:$PATH"
 ENV GOROOT="/usr/local/go"
 ENV GOPATH="/root/go"
