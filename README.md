@@ -11,7 +11,7 @@ Both `amd64` and `arm64` images are supported.
 ## Image URL
 
 ```url
-ghcr.io/lukejoshuapark/instant-coffee:0.10.3
+ghcr.io/lukejoshuapark/instant-coffee:0.11.0
 ```
 
 ## Installed Software
@@ -19,25 +19,27 @@ ghcr.io/lukejoshuapark/instant-coffee:0.10.3
 |Name|Type|Version|
 |----|----|-------|
 |(Ubuntu)|🖤 Base Image|26.04|
-|AWS CLI|💜 DevOps|2.34.35|
+|AWS CLI|💜 DevOps|2.36.13|
 |cargo-lambda|💛 Utility|1.9.1|
+|Claude Code|💚 AI Harness||
 |curl|💛 Utility||
 |Docker CLI|💛 Utility|29.4.1|
 |Docker Compose Plugin|💛 Utility|5.1.3|
 |gcc|💙 Language/Runtime||
+|gh|💜 DevOps||
 |git|💛 Utility||
-|Go|💙 Language/Runtime|1.26.2|
-|gomplate|💛 Utility|5.0.0|
+|Go|💙 Language/Runtime|1.26.5|
+|gomplate|💛 Utility|5.2.0|
 |jq|💛 Utility||
-|lazygit|💛 Utility|0.61.1|
+|lazygit|💛 Utility|0.64.0|
 |migrate|💛 Utility|4.19.1|
 |ngrok|💛 Utility||
-|Node|💙 Language/Runtime|24.15.0|
+|Node|💙 Language/Runtime|24.19.0|
 |Python|💙 Language/Runtime||
-|Rust|💙 Language/Runtime|1.95.0|
+|Rust|💙 Language/Runtime|1.97.1|
 |sqlx-cli|💛 Utility||
-|task|💛 Utility|3.50.0|
-|Terraform|💜 DevOps|1.14.9|
+|task|💛 Utility|3.52.0|
+|Terraform|💜 DevOps|1.15.8|
 |unzip|💛 Utility||
 |xz-utils|💛 Utility||
 |zip|💛 Utility||
@@ -49,7 +51,7 @@ Instant Coffee.
 
 ```json
 {
-    "image": "ghcr.io/lukejoshuapark/instant-coffee:0.10.3",
+    "image": "ghcr.io/lukejoshuapark/instant-coffee:0.11.0",
     "mounts": [
         "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
     ],
@@ -60,10 +62,8 @@ Instant Coffee.
                 "eamodio.gitlens",
                 "golang.go",
                 "hashicorp.terraform",
-                "ms-python.python",
                 "rust-lang.rust-analyzer",
-                "tamasfe.even-better-toml",
-                "vadimcn.vscode-lldb"
+                "tamasfe.even-better-toml"
             ],
             "settings": {
                 "js/ts.preferences.quoteStyle": "double",
