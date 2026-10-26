@@ -11,7 +11,7 @@ Both `amd64` and `arm64` images are supported.
 ## Image URL
 
 ```url
-ghcr.io/lukejoshuapark/instant-coffee:0.11.0
+ghcr.io/lukejoshuapark/instant-coffee:0.11.1
 ```
 
 ## Installed Software
